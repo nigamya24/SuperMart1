@@ -1,8 +1,0 @@
-introduction
-litratrurte
-desigin
-implementation
-result
-conclusion
-fusture aspects 
-references
