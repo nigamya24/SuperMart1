@@ -1,0 +1,2 @@
+C:\Users\Yash\Desktop\SuperMart\javafx-sdk-11.0.2\lib
+linear-gradient(to right top, #4d94ff, #7380f2, #916adf, #a84fc5, #b82da7);

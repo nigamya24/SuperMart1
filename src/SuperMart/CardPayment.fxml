@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="485.0" prefWidth="938.0" style="-fx-background-color: #9400bd;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SuperMart.CardPayment">
+   <children>
+      <Label fx:id="BillLabel" layoutX="311.0" layoutY="96.0" prefHeight="38.0" prefWidth="133.0" />
+      <Label layoutX="322.0" layoutY="24.0" text="SuperMart" textFill="WHITE">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="55.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons8-fast-cart-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <GridPane layoutX="14.0" layoutY="11.0" prefHeight="36.0" prefWidth="160.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="160.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label fx:id="date" text="Label" textFill="WHITE" />
+            <Label fx:id="time" text="Label" textFill="WHITE" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="goback" layoutX="64.0" layoutY="411.0" mnemonicParsing="false" onAction="#goback" prefHeight="38.0" prefWidth="70.0" style="-fx-background-color: #3b054a; -fx-background-radius: 100;" text="Go Back" textFill="WHITE" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="24.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@order%20(1).png" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="336.0" text="Confirm Purchase" textFill="WHITE">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </Label>
+      <Pane layoutX="201.0" layoutY="96.0" prefHeight="370.0" prefWidth="706.0" style="-fx-background-color: #652078;">
+         <children>
+            <GridPane alignment="CENTER" hgap="10.0" layoutX="32.0" layoutY="45.0" prefHeight="188.0" prefWidth="305.0" vgap="10.0">
+               <columnConstraints>
+                  <ColumnConstraints maxWidth="136.8" minWidth="10.0" prefWidth="136.8" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="153.800048828125" minWidth="10.0" prefWidth="122.4" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+               <children>
+                  <Label text="Total" textFill="WHITE" GridPane.rowIndex="1" />
+                  <TextField fx:id="billtotal" promptText="Total" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="billinvoice" promptText="Invoice No" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" />
+                  <Label contentDisplay="CENTER" text="Invoice No." textFill="WHITE" />
+                  <Label text="Membership Number " textFill="WHITE" GridPane.rowIndex="2" />
+                  <TextField fx:id="memnum1" promptText="Membership Number" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Label text="Unique Code" textFill="WHITE" GridPane.rowIndex="3" />
+                  <TextField fx:id="uniquecode" promptText="Unique Code" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+               </children>
+            </GridPane>
+            <Button fx:id="confirmpaymentbt" layoutX="31.0" layoutY="246.0" mnemonicParsing="false" onAction="#confirmpayment" prefHeight="47.0" prefWidth="305.0" style="-fx-background-color: #3b054a; -fx-background-radius: 100;" text="Confirm Payment" textFill="WHITE" />
+            <TextArea fx:id="billarea" editable="false" layoutX="407.0" layoutY="28.0" prefHeight="276.0" prefWidth="285.0" text="******************** SuperMart **********************&#10;&#10;Product ID         Quantity          Price             Total" />
+            <Button fx:id="printrecieptbt" layoutX="31.0" layoutY="304.0" mnemonicParsing="false" onAction="#printreciept" prefHeight="47.0" prefWidth="305.0" style="-fx-background-color: #3b054a; -fx-background-radius: 100;" text="Print Reciept" textFill="WHITE" />
+            <Button fx:id="checkmemdetbt" layoutX="345.0" layoutY="154.0" mnemonicParsing="false" onAction="#checkmemdet" style="-fx-background-color: #3b054a; -fx-background-radius: 100;" text="Check" textFill="WHITE" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="440.0" prefWidth="717.0" style="-fx-background-color: #024fc2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SuperMart.Semilogin">
+   <children>
+      <Label layoutX="242.0" layoutY="34.0" prefHeight="58.0" prefWidth="257.0" text="SuperMart" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font size="40.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="54.0" fitWidth="52.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@icons8-fast-cart-96.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Label>
+      <GridPane layoutX="14.0" layoutY="15.0" prefHeight="61.0" prefWidth="148.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.80001220703127" minWidth="10.0" prefWidth="160.80001220703127" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="date" text="Label" textFill="WHITE" />
+            <Label fx:id="time" text="Label" textFill="WHITE" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="goback" layoutX="70.0" layoutY="386.0" mnemonicParsing="false" onAction="#goback" style="-fx-background-color: #000640; -fx-background-radius: 100;" text="Go Back" textFill="#fcfcfc" />
+      <ImageView fitHeight="153.0" fitWidth="142.0" layoutX="31.0" layoutY="140.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@profile.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="14.0" layoutY="298.0" prefHeight="35.0" prefWidth="175.0" text="Welcome, Yash" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <Pane layoutX="215.0" layoutY="121.0" prefHeight="297.0" prefWidth="468.0" style="-fx-background-color: #0b3470;">
+         <children>
+            <GridPane layoutX="23.0" layoutY="26.0" prefHeight="253.0" prefWidth="187.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button fx:id="managevendors" mnemonicParsing="false" onAction="#seevendors" prefHeight="30.0" prefWidth="166.0" style="-fx-background-color: #000640; -fx-background-radius: 100;" text="Manage Vendors" textFill="WHITE" />
+                  <Button fx:id="manageinventory" mnemonicParsing="false" onAction="#manageinventory" prefHeight="30.0" prefWidth="167.0" style="-fx-background-color: #000640; -fx-background-radius: 100;" text="Manage Inventory" textFill="WHITE" GridPane.rowIndex="1" />
+                  <Button fx:id="manageempdetails" mnemonicParsing="false" onAction="#manageempdetails" prefHeight="32.0" prefWidth="168.0" style="-fx-background-color: #000640; -fx-background-radius: 100;" text="Manage Employee Details" textFill="WHITE" GridPane.rowIndex="2" />
+                  <Button fx:id="checkinventorybt" mnemonicParsing="false" onAction="#checkinventory" prefHeight="29.0" prefWidth="167.0" style="-fx-background-color: #000640; -fx-background-radius: 100;" text="Check inventory" textFill="WHITE" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#getattendance" prefHeight="30.0" prefWidth="168.0" style="-fx-background-color: #000640; -fx-background-radius: 100;" text="Check Attendance" textFill="WHITE" GridPane.rowIndex="4" />
+                  <Button fx:id="seefeedbackbt" mnemonicParsing="false" onAction="#seefeedback" prefHeight="30.0" prefWidth="168.0" style="-fx-background-color: #000640; -fx-background-radius: 100;" text="See Feedback's" textFill="WHITE" GridPane.rowIndex="5" />
+               </children>
+            </GridPane>
+            <Label layoutX="299.0" layoutY="26.0" prefHeight="30.0" prefWidth="142.0" text="Todays' Sale" textFill="#faf6f6">
+               <font>
+                  <Font size="26.0" />
+               </font>
+            </Label>
+            <TextField fx:id="totalsale" layoutX="296.0" layoutY="66.0" promptText="Total sale" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" />
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>

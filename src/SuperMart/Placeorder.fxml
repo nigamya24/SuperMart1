@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="452.0" prefWidth="823.0" style="-fx-background-color: #217d0a;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SuperMart.Placeorder">
+   <children>
+      <Label layoutX="432.0" layoutY="26.0" text="SuperMart" textFill="#fafafa">
+         <font>
+            <Font size="30.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="46.0" fitWidth="57.0" layoutX="375.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-fast-cart-96.png" />
+         </image>
+      </ImageView>
+      <Pane layoutX="209.0" layoutY="90.0" prefHeight="348.0" prefWidth="587.0" style="-fx-background-color: #40ad24;">
+         <children>
+            <GridPane layoutX="39.0" layoutY="30.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Product Detail" textFill="WHITE" />
+                  <Label text="Quantity" textFill="WHITE" GridPane.rowIndex="1" />
+                  <TextField fx:id="prdname" promptText="Product Detail" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" />
+                  <TextField fx:id="prdquan" promptText="Product Quantity" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+            <GridPane layoutX="318.0" layoutY="28.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Vendor Name" textFill="WHITE" />
+                  <Label text="Product Category" textFill="WHITE" GridPane.rowIndex="1" />
+                  <Label text="Contact" textFill="WHITE" GridPane.rowIndex="2" />
+                  <TextField fx:id="vendorname" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" />
+                  <TextField fx:id="vendorcategory" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="vendorcontact" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+               </children>
+            </GridPane>
+            <TableView fx:id="prdtable" layoutX="14.0" layoutY="138.0" prefHeight="200.0" prefWidth="556.0">
+              <columns>
+                <TableColumn fx:id="prddetailtable" prefWidth="270.40003967285156" text="Product Detail" />
+                <TableColumn fx:id="prdquantable" prefWidth="284.800048828125" text="Quantity" />
+              </columns>
+            </TableView>
+            <Button fx:id="addprdbt" layoutX="86.0" layoutY="106.0" mnemonicParsing="false" onAction="#addprd" style="-fx-background-color: #0c3801; -fx-background-radius: 100;" text="ADD" textFill="WHITE" />
+            <Button fx:id="removeprdbt" layoutX="171.0" layoutY="106.0" mnemonicParsing="false" onAction="#removeprd" style="-fx-background-color: #0c3801; -fx-background-radius: 100;" text="REMOVE" textFill="WHITE" />
+         </children>
+      </Pane>
+      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="61.0" prefWidth="186.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="date" text="Label" textFill="WHITE" />
+            <Label fx:id="time" text="Label" textFill="WHITE" GridPane.rowIndex="1" />
+         </children>
+      </GridPane>
+      <Button fx:id="gobackbt" layoutX="36.0" layoutY="397.0" mnemonicParsing="false" onAction="#goback" prefHeight="26.0" prefWidth="60.0" style="-fx-background-color: #0c3801; -fx-background-radius: 100;" text="Go Back" textFill="WHITE" />
+      <Label layoutX="57.0" layoutY="305.0" text="Place Order" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="34.0" layoutY="144.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-purchase-order-96.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="plaveorderbt" layoutX="108.0" layoutY="397.0" mnemonicParsing="false" onAction="#place" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #0c3801; -fx-background-radius: 100;" text="Place Order" textFill="WHITE" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="490.0" prefWidth="818.0" style="-fx-background-color: #008ec2;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="SuperMart.Checkout">
+   <children>
+      <AnchorPane layoutX="169.0" layoutY="123.0" prefHeight="354.0" prefWidth="634.0" style="-fx-background-color: #004963;">
+         <children>
+            <Label layoutX="70.0" layoutY="51.0" text="ProductID" textFill="WHITE" />
+            <Label layoutX="74.0" layoutY="85.0" text="Quantity" textFill="#fffdfd" />
+            <TextField fx:id="billprdid" layoutX="136.0" layoutY="47.0" promptText="Enter ProductID" style="-fx-background-color: transaparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" />
+            <TextField fx:id="billquan" layoutX="136.0" layoutY="81.0" promptText="Enter Quantity" style="-fx-background-color: transaparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" />
+            <Button fx:id="addbt" layoutX="319.0" layoutY="43.0" mnemonicParsing="false" onAction="#addtobill" style="-fx-background-color: #032f42; -fx-background-radius: 100;" text="ADD" textFill="WHITE" />
+            <Button fx:id="removebt" layoutX="369.0" layoutY="43.0" mnemonicParsing="false" onAction="#removefrombill" style="-fx-background-color: #032f42; -fx-background-radius: 100;" text="REMOVE" textFill="WHITE" />
+            <Button fx:id="pay" layoutX="458.0" layoutY="42.0" mnemonicParsing="false" onAction="#paybill" prefHeight="70.0" prefWidth="140.0" style="-fx-background-color: #032f42; -fx-background-radius: 100;" text="PAY" textFill="#fcfcfc" />
+            <TextField fx:id="totalarea" editable="false" layoutX="348.0" layoutY="85.0" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: transaparent; -fx-border-color: white; -fx-border-width: 0px 0px 1px; -fx-text-fill: white;" text="0" />
+            <Label layoutX="317.0" layoutY="91.0" text="Total" textFill="#fffafa" />
+            <TableView fx:id="billtable" layoutX="17.0" layoutY="144.0" prefHeight="200.0" prefWidth="602.0">
+              <columns>
+                <TableColumn fx:id="prodidcol" prefWidth="149.5999755859375" text="ProductID" />
+                <TableColumn fx:id="quancol" prefWidth="149.60003662109375" text="Quantity" />
+                  <TableColumn fx:id="pricecol" prefWidth="155.20001220703125" text="Price" />
+                  <TableColumn fx:id="totalcol" prefWidth="143.20001220703125" text="Total" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <Label layoutX="378.0" layoutY="39.0" prefHeight="38.0" prefWidth="150.0" text="SuperMart" textFill="WHITE">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="60.0" fitWidth="63.0" layoutX="318.0" layoutY="31.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-fast-cart-96.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="168.0" fitWidth="217.0" layoutX="8.0" layoutY="159.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@icons8-checkout-100.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="goback" layoutX="62.0" layoutY="437.0" mnemonicParsing="false" onAction="#goback" style="-fx-background-color: #032f42; -fx-background-radius: 100;" text="Go Back" textFill="#eaeaea" />
+      <Label layoutX="45.0" layoutY="325.0" text="Welcome," textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <Label layoutX="41.0" layoutY="359.0" text="To Cashier " textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="21.0" layoutY="23.0" prefHeight="50.0" prefWidth="192.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label fx:id="date" text="Label" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+            <Label fx:id="time" text="Time" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <Label layoutX="45.0" layoutY="388.0" text="Checkout" textFill="WHITE">
+         <font>
+            <Font size="23.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
