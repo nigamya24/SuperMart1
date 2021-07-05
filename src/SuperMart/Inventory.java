@@ -113,7 +113,7 @@ public class Inventory implements Initializable {
         String ct1 = category.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
 
         PreparedStatement ps1 = con1.prepareStatement("INSERT INTO inventory1 (ProductID, Quantity, Price, CostPrice, Category) VALUES (?,?,?,?,?)");
 
@@ -160,7 +160,7 @@ public class Inventory implements Initializable {
         String pr1 = prdid.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
         PreparedStatement ps1 = con1.prepareStatement("DELETE FROM inventory1 WHERE ProductID=?");
         ps1.setString(1, pr1);
         int stat = ps1.executeUpdate();
@@ -260,7 +260,7 @@ public class Inventory implements Initializable {
 
         try{
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
             query = "SELECT * FROM inventory1;";
             ps4 = connection.createStatement();
             rs4 = ps4.executeQuery(query);
@@ -284,7 +284,7 @@ public class Inventory implements Initializable {
         String pr1 = prdid.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
 
         PreparedStatement ps1 = con1.prepareStatement("DELETE FROM inventory1 WHERE ProductID=?");
 
@@ -311,7 +311,7 @@ public class Inventory implements Initializable {
         String cp1 = costprice.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
 
         PreparedStatement ps1 = con1.prepareStatement("INSERT INTO inventory1 (ProductID, Quantity, Price, CostPrice, Category) VALUES (?,?,?,?,?)");
 
