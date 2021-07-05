@@ -83,7 +83,7 @@ public class CardPayment implements Initializable {
         String t1 = uniquecode.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/cardauthenticate","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/cardauthenticate","root","");
         PreparedStatement ps1 = con1.prepareStatement("SELECT * FROM card1 WHERE UniqueCode=?");
         ps1.setString(1, t1);
         ResultSet rs1 = ps1.executeQuery();
@@ -122,7 +122,7 @@ public class CardPayment implements Initializable {
         String s1 = format.format(ld);
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/invoice","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/invoice","root","");
 
         PreparedStatement p1 = con1.prepareStatement("INSERT INTO invoice.invoice2 (InvoiceNo, Amount, UniqueCode, Billdateandtime,BillDate) VALUES (?,?,?,?,?)");
 
@@ -192,7 +192,7 @@ public class CardPayment implements Initializable {
     public void showtable() throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","");
         Statement s1 = con1.createStatement();
         ResultSet rs = s1.executeQuery("SELECT * FROM newbill");
 
@@ -209,7 +209,7 @@ public class CardPayment implements Initializable {
         String t1 = memnum1.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member","root","India@321");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member","root","");
         PreparedStatement p1 = con.prepareStatement("SELECT * FROM membership WHERE MembershipNumber=?");
         p1.setString(1, t1);
         ResultSet rs = p1.executeQuery();
