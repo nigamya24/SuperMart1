@@ -86,7 +86,7 @@ public class Feedback implements Initializable {
         String fdn3=FeedbackArea.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conn2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","India@321");
+        Connection conn2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","");
 
         PreparedStatement ps5 = conn2.prepareStatement("INSERT INTO feedback1 (Name,ContactNo, Email, Message) VALUES (?,?,?,?)");
 
