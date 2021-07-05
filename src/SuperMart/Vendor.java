@@ -175,7 +175,7 @@ public class Vendor implements Initializable {
         tablecontact.setCellValueFactory(new PropertyValueFactory<>("Contact"));
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","India@321");
+        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","");
         PreparedStatement p1 = c1.prepareStatement("SELECT * FROM vendor1");
         ResultSet rs1 = p1.executeQuery();
         while (rs1.next()){
@@ -194,7 +194,7 @@ public class Vendor implements Initializable {
         String t3 = vcontact.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","India@321");
+        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","");
         PreparedStatement p1 = c1.prepareStatement("INSERT INTO vendor1 (Name, Category, Contact) VALUES (?,?,?)");
         p1.setString(1, t1);
         p1.setString(2, t2);
@@ -209,7 +209,7 @@ public class Vendor implements Initializable {
         String t1 = vname.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","India@321");
+        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","");
         PreparedStatement p1 = c1.prepareStatement("DELETE FROM vendor1 where Name=?");
         p1.setString(1, t1);
         p1.executeUpdate();
