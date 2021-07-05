@@ -134,7 +134,7 @@ public class Placeorder implements Initializable {
         prdquantable.setCellValueFactory(new PropertyValueFactory<>("Quantity"));
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","India@321");
+        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","");
         PreparedStatement ps1 = c1.prepareStatement("SELECT * FROM placeorder1");
         ResultSet rs1 = ps1.executeQuery();
         while (rs1.next()){
@@ -151,7 +151,7 @@ public class Placeorder implements Initializable {
         String s2 = prdquan.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","India@321");
+        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","");
         PreparedStatement p1 = c1.prepareStatement("INSERT INTO placeorder1 (ProductDetail, Quantity) VALUES (?,?)");
         p1.setString(1, s1);
         p1.setString(2, s2);
@@ -171,7 +171,7 @@ public class Placeorder implements Initializable {
         String s1 = prdname.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","India@321");
+        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","");
         PreparedStatement p1 = c1.prepareStatement("DELETE FROM placeorder1 where ProductDetail=?");
         p1.setString(1, s1);
         p1.executeUpdate();
@@ -181,7 +181,7 @@ public class Placeorder implements Initializable {
     public void clrdb() throws SQLException, ClassNotFoundException {
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection connn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","India@321");
+        Connection connn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/vendor","root","");
         PreparedStatement ps1 = connn1.prepareStatement("DELETE FROM placeorder1");
         ps1.executeUpdate();
 
