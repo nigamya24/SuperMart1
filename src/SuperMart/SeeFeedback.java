@@ -91,7 +91,7 @@ public class SeeFeedback implements Initializable {
 
         Connection c1 = null;
         try {
-            c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","India@321");
+            c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/feedback","root","");
             PreparedStatement p1 = c1.prepareStatement("SELECT * FROM feedback1");
             ResultSet r1 = p1.executeQuery();
             while(r1.next()){
