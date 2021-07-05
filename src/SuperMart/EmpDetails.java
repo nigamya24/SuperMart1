@@ -114,7 +114,7 @@ public class EmpDetails implements Initializable {
         String t6 = String.valueOf(dob.getValue());
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","");
         PreparedStatement ps1 = con1.prepareStatement("INSERT INTO employee1 (EmpID, Name, Mobile, Salary, Gender, DOB) VALUES (?,?,?,?,?,?)");
 
         ps1.setString(1,t1);
@@ -178,7 +178,7 @@ public class EmpDetails implements Initializable {
 
         try{
 
-            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","India@321");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","");
             query = "SELECT * FROM employee1;";
             ps4 = connection.createStatement();
             rs4 = ps4.executeQuery(query);
@@ -203,7 +203,7 @@ public class EmpDetails implements Initializable {
         String t1 = empID.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","");
 
         PreparedStatement ps1 = con1.prepareStatement("DELETE FROM employee1 WHERE EmpID=?");
 
