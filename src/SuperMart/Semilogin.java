@@ -123,7 +123,7 @@ public class Semilogin implements Initializable {
         DateTimeFormatter format = DateTimeFormatter.ofPattern("dd/MM/YYYY", Locale.getDefault());
         String s1 = format.format(ld);
 
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/invoice","root","India@321");
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/invoice","root","");
         PreparedStatement ps4 = connection.prepareStatement("SELECT SUM(Amount) FROM invoice1 WHERE Billdate=?");
         ps4.setString(1, s1);
 
@@ -150,7 +150,7 @@ public class Semilogin implements Initializable {
     public void alert() throws ClassNotFoundException, SQLException {
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+            Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
             PreparedStatement p1 = c1.prepareStatement("SELECT * FROM inventory1");
             ResultSet r1 = p1.executeQuery();
             while(r1.next()){
