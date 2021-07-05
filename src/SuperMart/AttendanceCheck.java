@@ -65,7 +65,7 @@ public class AttendanceCheck implements Initializable {
         String a = dateselector.getValue().toString();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
         PreparedStatement p1 = con1.prepareStatement("SELECT * FROM attandance1 WHERE Date=?");
         p1.setString(1, a);
         ResultSet rs = p1.executeQuery();
