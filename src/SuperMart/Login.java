@@ -79,11 +79,6 @@ public class Login implements Initializable {
         String uname = UserTextField.getText();
         String pass = PasswordTextfield.getText();
 
-        /*Parent root = FXMLLoader.load(getClass().getResource("EmpView.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();*/
 
         if (UserTextField.getText().isEmpty() || PasswordTextfield.getText().isEmpty()) {
 
@@ -92,7 +87,7 @@ public class Login implements Initializable {
 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "India@321");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "");
                 String url = "SELECT * FROM login.login1 WHERE UserID='" + uname + "' AND Password='" + pass + "' ";
                 Statement ps = con.createStatement();
                 ResultSet rs = ps.executeQuery(url);
@@ -116,7 +111,7 @@ public class Login implements Initializable {
 
             try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "India@321");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/login", "root", "");
                 String url = "SELECT * FROM login.login2 WHERE UserID='" + uname + "' AND Password='" + pass + "' ";
                 Statement ps = con.createStatement();
                 ResultSet rs = ps.executeQuery(url);
