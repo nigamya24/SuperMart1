@@ -58,7 +58,7 @@ public class Membership implements Initializable {
         String t1 = memnum.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member","root","India@321");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member","root","");
         PreparedStatement p1 = con.prepareStatement("SELECT * FROM membership WHERE MembershipNumber=?");
         p1.setString(1, t1);
         ResultSet rs = p1.executeQuery();
