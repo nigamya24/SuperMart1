@@ -99,7 +99,7 @@ public class EmpView implements Initializable {
         String s1 = format.format(ld);
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/attendance","root","");
         PreparedStatement ps1 = con1.prepareStatement("INSERT INTO attandance1 (EmpID, Name, Status,DatenTime,Reason,Date) VALUES (?,?,?,?,?,?)");
 
         ps1.setString(1,String.valueOf(a) );
@@ -121,7 +121,7 @@ public class EmpView implements Initializable {
     public void empid() throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conn1= DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","India@321");
+        Connection conn1= DriverManager.getConnection("jdbc:mysql://localhost:3306/employee","root","");
         PreparedStatement ps4 = conn1.prepareStatement("SELECT * FROM employee1 WHERE Name=?");
         ps4.setString(1, person.getText());
         ResultSet rs4 = ps4.executeQuery();
