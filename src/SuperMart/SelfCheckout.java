@@ -178,7 +178,7 @@ public class SelfCheckout implements Initializable {
 
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection conn1= DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+        Connection conn1= DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
         PreparedStatement ps4 = conn1.prepareStatement("SELECT * FROM inventory.inventory1 WHERE ProductID=?");
         ps4.setString(1, t1);
         ResultSet rs4 = ps4.executeQuery();
@@ -194,7 +194,7 @@ public class SelfCheckout implements Initializable {
             clear();
 
             Class.forName("com.mysql.jdbc.Driver");
-            Connection connn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","India@321");
+            Connection connn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","");
             PreparedStatement ps1 = connn1.prepareStatement("INSERT INTO newbill (ProductID, Quantity, Price, Total) VALUES (?,?,?,?)");
 
             ps1.setString(1, t1);
@@ -228,7 +228,7 @@ public class SelfCheckout implements Initializable {
 
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","");
         PreparedStatement ps1 = con1.prepareStatement("SELECT * FROM newbill WHERE ProductID=?");
         ps1.setString(1, t1);
         ResultSet rs2 = ps1.executeQuery();
@@ -244,7 +244,7 @@ public class SelfCheckout implements Initializable {
         totalarea.setText(Totalarea);
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","India@321");
+        Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","");
         PreparedStatement ps2 = con1.prepareStatement("DELETE FROM newbill WHERE ProductID=?");
         ps2.setString(1, t1);
         int stat = ps2.executeUpdate();
@@ -265,7 +265,7 @@ public class SelfCheckout implements Initializable {
     public void clrdb() throws SQLException, ClassNotFoundException {
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection connn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","India@321");
+        Connection connn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","");
         PreparedStatement ps1 = connn1.prepareStatement("DELETE FROM newbill");
         ps1.executeUpdate();
 
@@ -279,7 +279,7 @@ public class SelfCheckout implements Initializable {
     public void updatedb() throws SQLException, ClassNotFoundException {
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+        Connection c1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
         PreparedStatement ps2 = c1.prepareStatement("SELECT * FROM inventory.inventory1 WHERE ProductID=?");
         ps2.setString(1, t1);
         ResultSet rs2 = ps2.executeQuery();
@@ -298,7 +298,7 @@ public class SelfCheckout implements Initializable {
         redquan = s1 - Integer.parseInt(t2);
         redqaun2 = String.valueOf(redquan);
 
-        Connection c2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+        Connection c2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
         PreparedStatement ps3 = c2.prepareStatement("UPDATE inventory.inventory1 SET Quantity=? WHERE ProductID=?");
         ps3.setString(1, redqaun2);
         ps3.setString(2, t1);
@@ -321,7 +321,7 @@ public class SelfCheckout implements Initializable {
         int s = Integer.parseInt(t2) + redquan;
         String s1 = String.valueOf(s);
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","India@321");
+        Connection con2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/inventory","root","");
         PreparedStatement ps2 = con2.prepareStatement("UPDATE inventory1 SET Quantity=? WHERE ProductID=?");
         ps2.setString(1, s1);
         ps2.setString(2, t1);
@@ -345,7 +345,7 @@ public class SelfCheckout implements Initializable {
         totalcol.setCellValueFactory(new PropertyValueFactory<>("Total"));
 
         try{
-            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root", "India@321");
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root", "");
             String query = "SELECT * From newbill";
             Statement ps4 = connection.createStatement();
             ResultSet rs5 = ps4.executeQuery(query);
