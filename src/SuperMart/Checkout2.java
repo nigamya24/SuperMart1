@@ -178,7 +178,7 @@ public class Checkout2 implements Initializable {
         String s1 = format.format(ld);
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/invoice","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/invoice","root","");
 
         PreparedStatement p1 = con1.prepareStatement("INSERT INTO invoice.invoice1 (InvoiceNo, Amount, Cash, Remaining, Billdateandtime,BillDate) VALUES (?,?,?,?,?,?)");
 
@@ -196,7 +196,7 @@ public class Checkout2 implements Initializable {
     public void showtable() throws ClassNotFoundException, SQLException {
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","India@321");
+        Connection con1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/bill","root","");
         Statement s1 = con1.createStatement();
         ResultSet rs = s1.executeQuery("SELECT * FROM newbill");
 
@@ -212,7 +212,7 @@ public class Checkout2 implements Initializable {
         String t1 = memship1.getText();
 
         Class.forName("com.mysql.jdbc.Driver");
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member","root","India@321");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/member","root","");
         PreparedStatement p1 = con.prepareStatement("SELECT * FROM membership WHERE MembershipNumber=?");
         p1.setString(1, t1);
         ResultSet rs = p1.executeQuery();
